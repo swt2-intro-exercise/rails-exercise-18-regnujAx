@@ -10,11 +10,11 @@ class AuthorsController < ApplicationController
   #end
 
   def create
-  	#render plain: params[:author].inspect
-  	@author = Author.new(author_params)
+  	render plain: params[:author].inspect
+  	#@author = Author.new(author_params)
  
-  	@author.save
-  	redirect_to @author
+  	#@author.save
+  	#redirect_to @author
   	#redirect_back fallback_location: @author
   end
 
