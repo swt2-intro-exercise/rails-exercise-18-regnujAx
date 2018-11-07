@@ -22,8 +22,9 @@ describe "New author page", type: :feature do
     page.fill_in 'author[last_name]', with: 'Turing'
     page.fill_in 'author[homepage]', with: 'http://wikipedia.de/Alan_Turing'
     find('input[type="submit"]').click
-    #alan = Author.find_by!(:last_name => 'Turing')
-    #expect(alan).to_not be_nil
+    #expect(Author.count).to be 1 
+    alan = Author.find_by!(:last_name => 'Turing')
+    expect(alan).to_not be_nil
     #@author = FactoryBot.create :author
     #visit new_author_path(@author)
     #fill_in 'author[first_name]', with: 'Alan'
