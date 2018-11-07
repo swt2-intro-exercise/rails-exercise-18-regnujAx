@@ -7,6 +7,7 @@ describe 'Author index page' do
 	end
 
 	it 'should show authors' do 
+		@alan = FactoryBot.create :author
 		visit authors_path
     	expect(page).to have_text 'Alan'
     	expect(page).to have_text 'Turing'
