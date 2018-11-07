@@ -21,10 +21,10 @@ describe "New author page", type: :feature do
     fill_in 'author[first_name]', with: 'Alan'
     fill_in 'author[last_name]', with: 'Turing'
     fill_in 'author[homepage]', with: 'http://wikipedia.de/Alan_Turing'
-    find('input[type="submit"]').click
-    alan = Author.find_by!(:last_name => 'Turing')
-    expect(alan).to_not be_nil
+    expect{ find('input[type="submit"]').click }.to change{ Author.count }.by(1)
     #another test: 
-    #  expect{ find('input[type="submit"]').click }.to change{ Author.count }.by(1)
-  end
+    #find('input[type="submit"]').click
+    #alan = Author.find_by!(:last_name => 'Turing')
+    #expect(alan).to_not be_nil
+    end
 end
