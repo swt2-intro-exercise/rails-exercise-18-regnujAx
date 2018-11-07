@@ -2,18 +2,15 @@ require 'rails_helper'
 
 describe "New author", type: :model do
 
-  before :each do 
-    @author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.de/Alan_Turing")
-  end
+  author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.de/Alan_Turing")
 
   it "should have a first name, last name, and a homepage" do
-    expect(@author.first_name).to eq("Alan")
-    expect(@author.last_name).to eq("Turing")
-    expect(@author.homepage).to eq("http://wikipedia.de/Alan_Turing")
+    expect(author.first_name).to eq("Alan")
+    expect(author.last_name).to eq("Turing")
+    expect(author.homepage).to eq("http://wikipedia.de/Alan_Turing")
 	end
 
   it "should have a name" do
-    authorName = @author.name
-    expect(authorName).to eq("Alan Turing")
+    expect(author.name).to eq("Alan Turing")
   end
 end
