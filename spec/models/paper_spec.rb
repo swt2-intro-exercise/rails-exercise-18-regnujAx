@@ -10,4 +10,9 @@ RSpec.describe Paper, type: :model do
 		@paper = FactoryBot.build(:paper, year: "nineteen-fifty")
 		expect(@paper).to_not be_valid
 	end
+
+	it 'should not validate without a venue' do
+		@paper = FactoryBot.build(:paper, venue: "")
+		expect(@paper).to_not be_valid
+	end
 end
