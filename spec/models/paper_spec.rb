@@ -5,4 +5,9 @@ RSpec.describe Paper, type: :model do
 		@paper = FactoryBot.build(:paper, title: "")
 		expect(@paper).to_not be_valid
 	end
+
+	it 'should only allowed numeric value for year' do
+		@paper = FactoryBot.build(:paper, year: "nineteen-fifty")
+		expect(@paper).to_not be_valid
+	end
 end
