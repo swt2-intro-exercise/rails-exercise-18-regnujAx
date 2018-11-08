@@ -11,6 +11,7 @@ describe 'Author edit page' do
 		visit edit_author_path(@alan)
 		page.fill_in 'author[first_name]', with: 'Alan Mathison'
 		find('input[type="submit"]').click
+		@alan.reload
     	expect(@alan.first_name).to eq('Alan Mathison')
 	end
 end
